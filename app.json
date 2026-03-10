@@ -15,12 +15,14 @@
     "ios": {
       "supportsTablet": true
     },
+     "androidNavigationBar": {
+      "backgroundColor": "#E1E1E1"
+    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "src/assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
     "web": {

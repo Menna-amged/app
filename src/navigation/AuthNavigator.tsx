@@ -9,6 +9,7 @@ import CreatePasswordScreen from "../screens/CreatePasswordScreen";
 import OTPCheckScreen from "../screens/OTPCheckScreen";
 import ChangePasswordScreen from "../screens/ChangePasswordScreen";
 import VerificationScreen from "../screens/VerificationScreen";
+import CameraScreen from "../screens/CameraScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -50,6 +51,8 @@ export default function AuthNavigator({ setIsLoggedIn }: { setIsLoggedIn: (logge
   )}
 />
       <Stack.Screen name="ChangePassword" component={ChangePasswordScreen} />
+      
     </Stack.Navigator>
+
   );
 }
