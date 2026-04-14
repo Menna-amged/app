@@ -35,7 +35,7 @@ export default function HomeScreen({ navigation }: any) {
       >
         <View style={styles.header}>
           <Text style={styles.welcome}>Welcome back, Menna</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("More")}>
             <Ionicons name="ellipsis-vertical" size={22} color="#111" />
           </TouchableOpacity>
         </View>
