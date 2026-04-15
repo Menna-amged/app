@@ -15,15 +15,16 @@
     "ios": {
       "supportsTablet": true
     },
-     "androidNavigationBar": {
-      "backgroundColor": "#E1E1E1"
-    },
     "android": {
+      "softwareKeyboardLayoutMode": "pan",
       "adaptiveIcon": {
         "foregroundImage": "src/assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "predictiveBackGestureEnabled": false
+    },
+    "androidNavigationBar": {
+      "backgroundColor": "#E1E1E1"
     },
     "web": {
       "favicon": "src/assets/favicon.png"

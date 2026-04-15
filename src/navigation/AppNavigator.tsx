@@ -13,6 +13,9 @@ import TermsAndConditionsScreen from "../screens/TermsAndConditionsScreen";
 import PrivacyPolicyScreen from "../screens/Privacypolicyscreen";
 import HelpAndSupportScreen from "../screens/Helpandsupportscreen";
 import MoreScreen from "../screens/MoreScreen";
+import FeedbackScreen from "../screens/FeedbackScreen";
+import AboutScreen from "../screens/AboutScreen";
+import ChatbotScreen from "../screens/ChatbotScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +41,9 @@ export default function AppNavigator() {
             <Stack.Screen name="Privacy" component={PrivacyPolicyScreen} />
             <Stack.Screen name="HelpSupport" component={HelpAndSupportScreen} />
             <Stack.Screen name="More" component={MoreScreen} />
+            <Stack.Screen name="Feedback" component={FeedbackScreen} />
+            <Stack.Screen name="About" component={AboutScreen} />
+            <Stack.Screen name="Chatbot" component={ChatbotScreen} />
 
       <Stack.Screen name="Login" component={AuthLoginForm} />
     </Stack.Navigator>

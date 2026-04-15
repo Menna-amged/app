@@ -23,7 +23,7 @@ const supportItems = [
   },
   {
     label: "Feedback",
-    route: null,
+    route: "Feedback",
     icon: <Ionicons name="chatbox" size={22} color={colors.main} />,
   },
   {
@@ -41,7 +41,7 @@ const settingsItems = [
   },
   {
     label: "About",
-    route: null,
+    route: "About",
     icon: <Ionicons name="information-circle" size={22} color={colors.main} />,
   },
 ];
@@ -50,7 +50,7 @@ function MenuGroup({
   items,
   navigation,
 }: {
-  items: typeof supportItems;
+  items: { label: string; route: string | null; icon: React.ReactElement }[];
   navigation: any;
 }) {
   return (

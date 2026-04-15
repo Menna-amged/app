@@ -1,12 +1,19 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { TouchableOpacity, StyleSheet, Text } from "react-native";
+import { TouchableOpacity, StyleSheet } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function FloatingChatButton(){
+export default function FloatingChatButton({ navigation }: any) {
 
-return(
+  const handlePress = async () => {
+    const data = await AsyncStorage.getItem("user_profile");
+    const profile = data ? JSON.parse(data) : {};
+    const userName = [profile.name, profile.lastName].filter(Boolean).join(" ") || "there";
+    navigation.navigate("Chatbot", { userName });
+  };
 
-<TouchableOpacity style={styles.button}>
-<MaterialCommunityIcons name="robot-outline" size={28} color="#fff" />
+  return (
+    <TouchableOpacity style={styles.button} onPress={handlePress}>
+      <MaterialCommunityIcons name="robot-outline" size={28} color="#fff" />
 </TouchableOpacity>
 
 );

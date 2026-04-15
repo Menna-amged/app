@@ -69,7 +69,7 @@ export default function HomeScreen({ navigation }: any) {
         <View style={{ height: 20 }} />
       </ScrollView>
 
-      <FloatingChatButton />
+      <FloatingChatButton navigation={navigation} />
       <NavBar navigation={navigation} activeTab="Home" />
     </View>
   );
