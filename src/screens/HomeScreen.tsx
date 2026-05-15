@@ -1,6 +1,10 @@
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, StatusBar } from "react-native";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { useState, useCallback } from "react";
+import { useFocusEffect } from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import WeatherCard from "../components/WeatherCard";
+import SunWarningCard from "../components/SunWarningCard";
 import FloatingChatButton from "../components/FloatingChatButton";
 import NavBar from "../components/NavBar";
 import colors from "../config/colors";
@@ -24,6 +28,17 @@ const steps = [
 ];
 
 export default function HomeScreen({ navigation }: any) {
+  const [lastDisease, setLastDisease] = useState<string | null>(null);
+
+  // كل مرة الشاشة تتفتح، اقري آخر تشخيص محفوظ
+  useFocusEffect(
+    useCallback(() => {
+      AsyncStorage.getItem("last_disease").then((val) => {
+        setLastDisease(val && val.length > 0 ? val : null);
+      });
+    }, [])
+  );
+
   return (
     <View style={styles.screen}>
       <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
@@ -41,6 +56,9 @@ export default function HomeScreen({ navigation }: any) {
         </View>
 
         <WeatherCard />
+
+        {/* ── Sun Warning Card (يظهر بس لو فيه تشخيص سابق) ── */}
+        {lastDisease && <SunWarningCard disease={lastDisease} />}
 
         <Text style={styles.sectionTitle}>How It Works</Text>
         <View style={styles.stepsContainer}>

@@ -21,7 +21,7 @@ const suggestedLocations = [
   { id: 2, name: "Nasr City",        sub: "Cairo, Egypt",    current: false },
   { id: 3, name: "6 of October",     sub: "Cairo, Egypt",    current: false },
   { id: 4, name: "New Cairo",        sub: "Cairo, Egypt",    current: false },
-  { id: 5, name: "London",           sub: "Giza, Egypt",     current: false },
+  
 ];
 
 export default function ChangeLocationScreen({ navigation }: any) {

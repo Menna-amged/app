@@ -27,7 +27,7 @@ export default function CameraScreen({ navigation }: any) {
     });
 
     if (!result.canceled) {
-      navigation.navigate("Result", { imageUri: result.assets[0].uri });
+      navigation.navigate("Prediction", { imageUri: result.assets[0].uri });
     }
   };
 
@@ -46,7 +46,7 @@ export default function CameraScreen({ navigation }: any) {
     });
 
     if (!result.canceled) {
-      navigation.navigate("Result", { imageUri: result.assets[0].uri });
+      navigation.navigate("Prediction", { imageUri: result.assets[0].uri });
     }
   };
 
@@ -54,7 +54,6 @@ export default function CameraScreen({ navigation }: any) {
     <View style={styles.screen}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
 
-      {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="chevron-back" size={24} color="#111" />
@@ -96,44 +95,14 @@ export default function CameraScreen({ navigation }: any) {
 }
 
 const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: StatusBar.currentHeight ?? 0, // ✅ نفس الـ HomeScreen
-  },
-  header: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-  },
+  screen: { flex: 1, backgroundColor: "#fff", paddingTop: StatusBar.currentHeight ?? 0 },
+  header: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 16, paddingVertical: 12 },
   headerTitle: { fontSize: 18, fontWeight: "700", color: "#111" },
-  content: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 24,
-    paddingBottom: 60,
-  },
+  content: { flex: 1, alignItems: "center", justifyContent: "center", paddingHorizontal: 24, paddingBottom: 60 },
   optionsRow: { flexDirection: "row", gap: 50, marginBottom: 40 },
   optionBtn: { alignItems: "center", gap: 10 },
-  iconCircle: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    backgroundColor: "#EFF6FF",
-    justifyContent: "center",
-    alignItems: "center",
-  },
+  iconCircle: { width: 80, height: 80, borderRadius: 40, backgroundColor: "#EFF6FF", justifyContent: "center", alignItems: "center" },
   optionLabel: { fontSize: 15, fontWeight: "500", color: "#111" },
-  infoBox: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-    gap: 10,
-    backgroundColor: "#EFF6FF",
-    borderRadius: 14,
-    padding: 14,
-  },
+  infoBox: { flexDirection: "row", alignItems: "flex-start", gap: 10, backgroundColor: "#EFF6FF", borderRadius: 14, padding: 14 },
   infoText: { flex: 1, fontSize: 13, color: "#374151", lineHeight: 20 },
 });

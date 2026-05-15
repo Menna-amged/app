@@ -10,8 +10,9 @@ import {
   Image,
   Alert,
 } from "react-native";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Ionicons } from "@expo/vector-icons";
+
 import * as ImagePicker from "expo-image-picker";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import colors from "../config/colors";
@@ -86,11 +87,15 @@ export default function EditProfile({ navigation }: any) {
         {/* Avatar */}
         <View style={styles.avatarSection}>
           <View style={styles.avatarWrapper}>
-            {photo ? (
-              <Image source={{ uri: photo }} style={styles.avatarImage} />
+            {photo && photo.length > 0 ? (
+              <Image
+                source={{ uri: photo }}
+                style={styles.avatarImage}
+                onError={() => setPhoto(null)}
+              />
             ) : (
               <View style={styles.avatar}>
-                <Ionicons name="person" size={60} color="#D1D5DB" />
+                <MaterialCommunityIcons name="account" size={70} color="#fff" />
               </View>
             )}
             <TouchableOpacity style={styles.cameraBadge} onPress={handlePickImage}>
@@ -142,7 +147,6 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     backgroundColor: "#fff",
-    
   },
   header: {
     flexDirection: "row",
@@ -178,7 +182,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 50,
-    backgroundColor: "#E5E7EB",
+    backgroundColor: colors.gray,
     justifyContent: "center",
     alignItems: "center",
   },

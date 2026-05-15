@@ -79,7 +79,7 @@ export default function DoctorScreen({ navigation }: any) {
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: "#F3F4F6", paddingTop: StatusBar.currentHeight ?? 0 },
+  screen: { flex: 1, backgroundColor: "#fff", paddingTop: StatusBar.currentHeight ?? 0 },
   header: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 16, paddingVertical: 12 },
   headerTitle: { fontSize: 18, fontWeight: "700", color: "#111" },
   searchContainer: { flexDirection: "row", alignItems: "center", backgroundColor: "#E5E7EB", marginHorizontal: 16, marginBottom: 16, borderRadius: 12, paddingHorizontal: 12, borderWidth: 2, borderColor: "#2563EB" },
